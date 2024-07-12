@@ -37,4 +37,10 @@ document.addEventListener("DOMContentLoaded", ()  =>{
             enableSubmit(Fields);
         })   
     }
+
+    document.getElementById('register_redirect').addEventListener('click', function (event) {
+        event.preventDefault();
+        window.location.href = 'http://127.0.0.1:5500/feed/index.html';
+        localeStorage.clear();
+    })
 });
