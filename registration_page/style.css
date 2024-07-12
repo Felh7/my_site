@@ -73,6 +73,10 @@ body{
     color: plum;
 }
 
+.btn:hover:disabled{
+    color: #333;
+}
+
 .wrapper .login-link{
     font-size: 14.5px;
     text-align: center;

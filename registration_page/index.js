@@ -11,6 +11,12 @@ function validateForm(Form){
             return false;
         }
     }
+    if (Form.id == 'e-mail'){
+        const regexp_condition = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if (!regexp_condition.test(Form.value)){
+            return false;
+        }
+    }
     return true;
 }
 
@@ -30,11 +36,12 @@ document.addEventListener("DOMContentLoaded", ()  =>{
     const input = document.querySelector('.input-box input');
     const UsrNameField = document.getElementById('usrname');
     const PasswdField = document.getElementById('passwd');
-    let Fields = [UsrNameField,PasswdField];
+    const EmailField = document.getElementById('e-mail');
+    let Fields = [UsrNameField,PasswdField,EmailField];
 
     for(var i = 0; i < Fields.length; i++){
         Fields[i].addEventListener("input", function () {
             enableSubmit(Fields);
         })   
     }
-});
+})
